@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>서비스 명</title>
+  <!-- 성욱이꺼에서 긁어온 css 파일들 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="/resources/lib/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="/resources/font/css/all.css">
+  <link rel="stylesheet" href="/resources/index/css/design.css">
+  <link rel="stylesheet" href="/resources/lib/bootstrap/css/carousel.css">
+
+  <script src="/resources/lib/crypto/core.min.js"></script>
+  <script src="/resources/lib/crypto/sha256.min.js"></script>
+  <script src="/resources/lib/jquery/jquery.min.js"></script>
+  <script src="/resources/lib/jquery/jquery.mousewheel.min.js"></script>
+  <script src="/resources/lib/jquery/jquery.validate.min.js"></script>
+  <script src="/resources/lib/bootstrap/js/popper.js"></script>
+  <script src="/resources/lib/bootstrap/js/bootstrap.js"></script>
+  <script src="/resources/lib/greensock/TweenMax.min.js"></script>
+  <script src="/resources/lib/scrollmagic/scrollmagic.min.js"></script>
+  <script src="/resources/lib/scrollmagic/plugins/animation.gsap.min.js"></script>
+  <script src="/resources/lib/bootstrap/js/carousel.js"></script>
+  <script src="/resources/index/js/common.js"></script>
+  </head>
+
+<body>
+  <!-- 가장 큰 레이아웃 -->
+  <!-- <div class="container-fluid fixed-top min-vh-100"></div> -->
+  <!-- 상단 네비바를 감싸는 박스 -->
+  <div class="container-fluid fixed-top top-contents" style="background-color: #007bff;">
+    <nav class="navbar navbar-dark navbar-expand flexflow-row">
+      <a class="ml-5 mt-3 mb-3" href="/" style="text-decoration: none; font-size: 37px; color: white">서비스 이름</a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto mr-auto underline silkabold description">
+          <li class="nav-item mr-5" style="color: white; cursor: pointer;">
+            <a>
+              SOLUTION
+            </a>
+          </li>
+          <li class="nav-item mr-5" style="color: white; cursor: pointer;">
+            <a>
+              PROTOCOL
+            </a>
+          </li>
+          <li class="nav-item mr-5" style="color: white; cursor: pointer;">
+            <a>
+              CONTACT
+            </a>
+          </li>
+        </ul>
+        <ul class="navbar-nav mr-5 mt-3 mb-3 silkamedium user-action">
+          <li class="nav-item">
+            <a class="nav-link" id="LOGIN">
+              LOG IN
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="JOIN">
+              JOIN
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  
+  <!-- LOGIN -->
+  <!-- <div class="sub-window shadow" id="bg-LOGIN">
+    <div class="fixed-window12">
+      <a type="button" class="closebtn" id="closebtn" aria-label="Close">
+        <span aria-hidden="ture">x</span>
+      </a>
+    </div>
+    <div class="create-window-part" style="padding-left:5rem !important;padding-right:5rem !important;">
+      <div class="form-group">
+        <div class="protocol-contents">
+          <p>재방문을 환영합니다. 서비스 이용을 위해 로그인 부탁드립니다.</p>
+        </div>
+        <br>
+        <br> -->
+        <!-- 로그인 요청보내는 거 나중에 작업 -->
+        <!-- <form ></form>
+      </div>
+    </div>
+  </div> -->
+  <!-- <div class="sub-window shadow show" id="bg-LOGIN">
+		<div class="fixed-window12 ">
+			<a type="button" class="closebtn" id="closebtn" aria-label="Close">
+				<span aria-hidden="true">x</span>
+			</a>
+		</div>
+		<div class="create-window-part" style="padding-left:5rem !important;padding-right:5rem !important;">
+			<div class="form-group">
+				
+				<div class="protocol-contents">
+					<p>재 방문을 환영합니다. 서비스 이용을 위해 로그인 부탁드립니다.</p>
+				</div>
+				<br>	
+				<br>
+				<form id="campaign_loginform" name="campaign_loginform" action="/loginProcess?_csrf=ebdf8993-f662-431c-ad40-37fdee7b9bee" method="post" novalidate="novalidate">
+					<div class="info-body mb-3">
+						<div class="mb-2">
+							<input type="text" class="form-control input-underline mb-2" id="uId" name="id" placeholder="ID(e-mail)"> 
+							<input type="password" class="form-control input-underline mb-2" id="uPw" name="password" placeholder="Password">
+						</div>
+						<div>
+							<input type="checkbox" id="Remember-check" name="_spring_security_remember_me" value="">
+							<label class="form-check-label" for="Remember-check">Remember me</label>
+							<a style="float: right; text-decoration: underline; color:#4153FF; cursor: pointer;" id="passwordch">비밀번호 찾기</a>	
+						</div>
+						<br>
+						<br>
+					</div>
+				</form>
+				<div class="row m-0 py-2">
+					<button class="btn1 btm-primary-login btn-lg btn-no-radius w-50 font-11" id="submitLOGIN">LOGIN</button>
+					<button class="btn1 btm-primary-join btn-lg btn-no-radius w-50 font-11" id="submitJOIN">JOIN</button>
+				</div>
+			</div>
+		</div>
+	</div> -->
+
+
+
+  <!-- contents1 -->
+  <div class="container-fluid h-800 pt-105" style="background-color: #007bff;">
+    <div class="container">
+      <div class="intro-left w-50 h-250">
+        <div class="intro-title pt-80">
+          서비스 이름
+            <div class="w-50" style="background-color:white; height: 5px;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="mt-60 w-50" style="color: white; font-size: 15pt">
+        <a>프로그래밍 언어 과외 중계 서비스 플랫폼</a>
+      </div>
+      <div class="intro-description w-50">
+        <div style="background-color: white; height: 50px; width: 10px;"></div>
+        <p class="pt-1">
+          OOOO은 국내 유일 프로그래밍 언어 전문 과외<br>
+          중계 플랫폼 입니다.<br>
+          타 과외 중계 플랫폼과는 다르게 주류,비주류<br>
+          가릴 것 없이 많은 언어 과외들을 지원하며<br>
+          실제 현업에서 근무하는 개발자들과 수강생들을<br>
+          효과적으로 매칭하여 학습을 제공합니다.
+        </p>
+        <button type="button" class="btn btn-outline-light mt-3 float-left" style="cursor: pointer;">시작하기</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- conntents2-->
+  <div class="h-600"></div>
+
+  <!-- contents3 -->
+  <div id="before-tech"></div>
+  <div class="scrollmagic-pin-spacer" style="inset: auto; margin: 0px; display: block; position: relative; box-sizing: content-box; width: 100%; min-height: 1000px; height: auto; padding-top: 3555px; padding-bottom: 0px;">
+    <!-- <div id="tech" class="carousel slide" data-ride="carousel" style="position: relative; margin: auto; inset: 0px auto auto 0px; box-sizing: border-box; width: 100%;">
+    <ol class="carousel-indicators " id="index-slidebar">
+       <li data-target="#tech" data-slide-to="0" class="index-slide" style="pointer-events: none;"></li>
+       <li data-target="#tech" data-slide-to="1" class="index-slide2" style="pointer-events: none;"></li>
+         <li data-target="#tech" data-slide-to="2" class="index-slide3 active" style="pointer-events: none;"></li>
+     </ol> -->
+   <div id="slideContainer" style="transform: matrix(1, 0, 0, 1, 0, 0);">	
+     <section class="panel blue item active bck-1" id="slide1">
+       <div class="container-fluid bg-tech ph-tech" id="tech1">
+         <div class="container">
+           <div class="row">
+             <div class="col h-600">
+               <div class="h-300 mt-120">
+                 <span class="carousel-num text-shadow-black silkabold fc-second">01</span>
+                 <p class="carousel-title">프로그래밍 언어 전문 과외</p>
+                 <p class="carousel-contents">
+                  OOOO은 국내 타사 과외 플랫폼과는 다르게<br> 
+                  비주류 언어 뿐만 아니라 최신 스택이나 배워볼<br>
+                  기회가 없었던 여러 경험을 제공합니다. <br>
+                 </p>
+               </div>
+             </div>
+             <div class="col tech-area">
+               <img  alt="" src="/resources/images/index/tech1.png" class="mt-120" style="width: 450px;">
+             </div>
+           </div>
+         </div>
+       </div>
+     </section>
+     <section class="panel turqoise item" id="slide2">
+       <div class="container-fluid bg-tech ph-tech" id="tech2">
+       <div class="container">
+         <div class="row">
+           <div class="col h-600">
+             <div class="h-300 mt-150">
+                 <span class="carousel-num text-shadow-white silkabold fc-primary">02</span>
+               <p class="carousel-title white-color">쉽고 직관적인 매칭</p>
+               <p class="carousel-contents white-color">
+                 OOOO은 쉽고 직관적인 UI로 관심있거나 학습하고 싶은<br>
+                 기술의 캠페인을 제안합니다.<br>
+                 또한 보다 안전하게 선생님과의 소통 및 과외금액 정산을<br>
+                 진행할 수 있는 환경을 지원합니다.
+               </p>
+             </div>
+           </div>
+           <div class="col tech-area">
+             <img alt="" src="/resources/images/index/tech2.png" class="mt-150" style="width: 480px">
+           </div>
+         </div>
+       </div>
+     </div>
+     </section>
+     <section class="panel green item bck-1" id="slide3">
+       <div class="container-fluid bg-tech ph-tech" id="tech3">
+       <div class="container">
+         <div class="row">
+           <div class="col h-600">
+             <div class="h-300 mt-150">
+             <span class="carousel-num text-shadow-black silkabold fc-second">03</span>
+               <p class="carousel-title">현업 개발자와의 학습</p>
+               <p class="carousel-contents">
+                OOOO은 실제 검증 및 인증된 현업 개발자를 통하여 직접적으로<br>
+                과외를 받으며 학습을 극대화 할 수 있으며 선생님들은 퇴근 후<br> 
+                경험을 토대로 학습을 제공하며 부수입과 학습제공 경험을 획득합니다.<br>
+               </p>
+             </div>
+           </div>
+           <div class="col tech-area">
+             <img alt="" src="/resources/images/index/tech3.png" class="mt-140" style="width: 470px;">	
+           </div>
+         </div>
+       </div>
+     </div>
+     </section>
+   </div>
+ </div>
+  </div>
+
+
+  <!-- content5 -->
+  <div class="container-fluid bg-intro h-700" id="contact">
+		<div class="container h-100">
+			<div class="row h-100">
+				<div class="col my-auto">
+					<p class="contact-title">CONTACT</p>
+					<p class="contact-contents mb-5">
+						OOOO@yonsei.ac.kr <br>
+            강원도 원주시 연세대길 1, OO관 OOO호
+					</p>
+					<!-- <div class="contact-icon m-auto" data-toggle="modal" data-target="#inquireModal"></div> -->
+          <button type="button" class="btn btn-outline-light mt-3" style="cursor: pointer;">문의하기</button>
+				</div>
+			</div>
+		</div>
+	</div>
+  <!-- modal -->
+  <!-- <div class="modal fade show" id="inquireModal" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" aria-labelledby="inquireModalLabel" aria-modal="true" style="display: block;">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content no-border-radius">
+        <div class="modal-header no-border-bottom">
+          <h2 class="modal-title mx-auto fw-bold" id="inquireModalLabel">문의하기</h2>
+        </div>
+        <div class="modal-body">
+          <form action="/inquire?_csrf=f834082d-db43-4482-a3e3-5e33c2280677" method="post" name="inquireForm">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-1 no-padding-right">
+                <p class="inquire-p">e-mail</p>
+              </div>
+              <div class="col-11 form-group">
+                
+                
+                  <input type="email" class="form-control no-border-radius border-color-primary" id="inq-email" name="email" aria-describedby="emailHelp">
+                
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-1 no-padding-right">
+                <p class="inquire-p">제목</p>
+              </div>
+              <div class="col-11 form-group">
+                <input type="text" class="form-control no-border-radius border-color-primary" id="inq-title" name="title" aria-describedby="titleHelp">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-1 no-padding-right">
+                <p class="inquire-p">내용</p>
+              </div>
+              <div class="col-11 form-group">
+                <textarea class="form-control no-border-radius border-color-primary" id="inq-contents" name="contents" rows="5"></textarea>
+              </div>
+            </div>
+          </div>
+          </form>
+        </div>
+        <div class="modal-footer no-border-top">
+          <div class="w-50 mx-auto">
+            <button type="button" data-dismiss="modal" aria-label="Close" class="btn btn-secondary bg-secondary w-49 border-radius-100 float-left">닫기</button>
+            <button type="button" id="inquireSubmit" class="btn btn-primary bg-primary w-49 border-radius-100 float-right">보내기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <!-- bootstrap js cdn -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
