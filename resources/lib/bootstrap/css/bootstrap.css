@@ -2041,7 +2041,7 @@ pre code {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #495057;
+  color: #757f89;
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #ced4da;
@@ -2628,13 +2628,13 @@ fieldset:disabled a.btn {
 }
 .btm-primary-login{
 	color: #FFFFFF;
-  background-color: #4153FF;
-  border-color: #4153FF;
+  background-color: #007bff;
+  border-color: #007bff;
 }
 .btm-primary-join{
-	color: #4153FF;
+	color: #007bff;
   background-color: #FFFFFF;
-  border-color: #4153FF;
+  border-color: #007bff;
 }
 
 .btn-primary:hover {
@@ -3130,7 +3130,7 @@ fieldset:disabled a.btn {
   border-color: #f8f9fa;
 }
 
-.btn-outline-light:focus, .btn-outline-light.focus {
+/* .btn-outline-light:focus, .btn-outline-light.focus {
   box-shadow: 0 0 0 0.2rem rgba(248, 249, 250, 0.5);
 }
 
@@ -3149,7 +3149,7 @@ fieldset:disabled a.btn {
 .btn-outline-light:not(:disabled):not(.disabled):active:focus, .btn-outline-light:not(:disabled):not(.disabled).active:focus,
 .show > .btn-outline-light.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgba(248, 249, 250, 0.5);
-}
+} */
 
 .btn-outline-dark {
   color: #343a40;
@@ -8182,8 +8182,16 @@ button.bg-dark:focus {
   width: 25% !important;
 }
 
+.w-40 {
+  width: 40% !important;
+}
+
 .w-50 {
   width: 50% !important;
+}
+
+.w-60 {
+  width: 60% !important;
 }
 
 .w-75 {
@@ -8208,6 +8216,10 @@ button.bg-dark:focus {
 
 .h-75 {
   height: 75% !important;
+}
+
+.h-85 {
+  height: 85% !important;
 }
 
 .h-100 {
@@ -8379,6 +8391,11 @@ button.bg-dark:focus {
 .mb-5,
 .my-5 {
   margin-bottom: 4rem !important;
+}
+
+.mb-6,
+.my-6 {
+  margin-bottom: 6rem !important;
 }
 
 .ml-5,

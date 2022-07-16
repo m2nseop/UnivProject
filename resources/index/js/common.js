@@ -3,6 +3,7 @@ $(document).ready(function() {
 	initTech();
 });
 
+// contents 3 에서 가로로 스크롤할때 밑에 점 3개
 function initTech(){
 	var controller = new ScrollMagic.Controller();
 
@@ -94,7 +95,7 @@ function init(){
 	    		return false;
 	    	}
 	    },
-	    "8자 이상 소문자,숫자,특수기호를 반드시 포함해주세요."
+	    "6자리 이상 소문자/숫자/특수기호를 반드시 포함해주세요."
 	);
 	$.validator.addMethod(
 	    "checkName",

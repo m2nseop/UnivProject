@@ -11,7 +11,7 @@
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   
   <link rel="stylesheet" href="/resources/lib/bootstrap/css/bootstrap.css">
-  <link rel="stylesheet" href="/resources/font/css/all.css">
+  <link rel="stylesheet" href="/resources/fonts/css/all.css">
   <link rel="stylesheet" href="/resources/index/css/design.css">
   <link rel="stylesheet" href="/resources/lib/bootstrap/css/carousel.css">
 
@@ -27,11 +27,11 @@
   <script src="/resources/lib/scrollmagic/plugins/animation.gsap.min.js"></script>
   <script src="/resources/lib/bootstrap/js/carousel.js"></script>
   <script src="/resources/index/js/common.js"></script>
-  </head>
+</head>
 
 <body>
   <!-- 가장 큰 레이아웃 -->
-  <!-- <div class="container-fluid fixed-top min-vh-100"></div> -->
+  <div class="container-fluid fixed-top min-vh-100 bgi-a" id="bg-image"></div>
   <!-- 상단 네비바를 감싸는 박스 -->
   <div class="container-fluid fixed-top top-contents" style="background-color: #007bff;">
     <nav class="navbar navbar-dark navbar-expand flexflow-row">
@@ -39,17 +39,17 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto mr-auto underline silkabold description">
           <li class="nav-item mr-5" style="color: white; cursor: pointer;">
-            <a>
+            <a class="nav-link" href="#solution">
               SOLUTION
             </a>
           </li>
           <li class="nav-item mr-5" style="color: white; cursor: pointer;">
-            <a>
+            <a class="nav-link" href="#tech1">
               PROTOCOL
             </a>
           </li>
           <li class="nav-item mr-5" style="color: white; cursor: pointer;">
-            <a>
+            <a class="nav-link" href="#contact">
               CONTACT
             </a>
           </li>
@@ -70,66 +70,248 @@
     </nav>
   </div>
   
+  <!-- login, logout js -->
+  <style>
+    #bg-JOIN form input{
+       padding-left:0px !important;
+    }
+    #bg-LOGIN form input{
+       padding-left:0px !important;
+    }
+    #bg-PASSWORD-SEARCH form input{
+       padding-left:0px !important;
+    }
+
+    #bg-JOIN button:hover {
+         background-color: rgb(88,102,255);
+         color: white;
+         border-color:rgb(0,125,242);
+    }
+    
+    #uId-error, #uPw-error, #pwchk_id-error, #pwchk_name-error {
+       font-size:14px;
+       margin-top: -7px !important;
+        display: flex;
+    }
+    
+    .error{
+       font-size:14px;
+    }
+    
+    .certify-btn:hover{
+       background-color: #f1f1f1 !important;   
+    }
+  </style>
+
   <!-- LOGIN -->
-  <!-- <div class="sub-window shadow" id="bg-LOGIN">
-    <div class="fixed-window12">
-      <a type="button" class="closebtn" id="closebtn" aria-label="Close">
-        <span aria-hidden="ture">x</span>
-      </a>
-    </div>
-    <div class="create-window-part" style="padding-left:5rem !important;padding-right:5rem !important;">
-      <div class="form-group">
-        <div class="protocol-contents">
-          <p>재방문을 환영합니다. 서비스 이용을 위해 로그인 부탁드립니다.</p>
-        </div>
-        <br>
-        <br> -->
-        <!-- 로그인 요청보내는 거 나중에 작업 -->
-        <!-- <form ></form>
-      </div>
-    </div>
-  </div> -->
-  <!-- <div class="sub-window shadow show" id="bg-LOGIN">
-		<div class="fixed-window12 ">
+  <div class="sub-window shadow" id="bg-LOGIN">
+		<div class="fixed-window12">
 			<a type="button" class="closebtn" id="closebtn" aria-label="Close">
-				<span aria-hidden="true">x</span>
+				<span aria-hidden="true">&times;</span>
 			</a>
 		</div>
 		<div class="create-window-part" style="padding-left:5rem !important;padding-right:5rem !important;">
 			<div class="form-group">
-				
+        <div class="text-center">
+          <b class="LOGIN-font mr-2" style="font-size:50px;">LOGIN</b>
+       </div>
 				<div class="protocol-contents">
 					<p>재 방문을 환영합니다. 서비스 이용을 위해 로그인 부탁드립니다.</p>
 				</div>
 				<br>	
 				<br>
+        <!-- action="/campaignMember/campaign_login"  -->
 				<form id="campaign_loginform" name="campaign_loginform" action="/loginProcess?_csrf=ebdf8993-f662-431c-ad40-37fdee7b9bee" method="post" novalidate="novalidate">
 					<div class="info-body mb-3">
 						<div class="mb-2">
-							<input type="text" class="form-control input-underline mb-2" id="uId" name="id" placeholder="ID(e-mail)"> 
-							<input type="password" class="form-control input-underline mb-2" id="uPw" name="password" placeholder="Password">
+							<input type="text" class="form-control input-underline mb-4" id="uId" name="id" placeholder="ID(e-mail)"> 
+							<input type="password" class="form-control input-underline mb-4" id="uPw" name="password" placeholder="Password">
 						</div>
 						<div>
 							<input type="checkbox" id="Remember-check" name="_spring_security_remember_me" value="">
 							<label class="form-check-label" for="Remember-check">Remember me</label>
-							<a style="float: right; text-decoration: underline; color:#4153FF; cursor: pointer;" id="passwordch">비밀번호 찾기</a>	
+							<a style="float: right; color: #007bff; cursor: pointer;" id="passwordch">비밀번호 찾기</a>	
 						</div>
 						<br>
 						<br>
 					</div>
 				</form>
-				<div class="row m-0 py-2">
-					<button class="btn1 btm-primary-login btn-lg btn-no-radius w-50 font-11" id="submitLOGIN">LOGIN</button>
-					<button class="btn1 btm-primary-join btn-lg btn-no-radius w-50 font-11" id="submitJOIN">JOIN</button>
+				<div class="row m-0 py-2 text-align-center">
+					<button class="btn1 btm-primary-login btn-lg btn-no-radius w-40 font-11 mr-5 ml-auto" id="submitLOGIN">확인</button>
+					<button class="btn1 btm-primary-join btn-lg btn-no-radius w-40 font-11 mr-auto" id="submitJOIN">가입하기</button>
 				</div>
 			</div>
 		</div>
-	</div> -->
+	</div>
 
+  <!-- JOIN --> 
+  <div class="sub-window shadow" id="bg-JOIN" >
+    <div class="fixed-window12">
+        <a type="button" class="closebtn" id="closebtn1" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </a>
+    </div>
+    <div class="create-window-part-join" style="padding-left:3rem !important;padding-right:3rem !important;">
+        <div class="form-group">
+          <div class="text-center">
+              <b class="LOGIN-font mr-2 " style="font-size:50px;">JOIN</b>
+          </div>
+          <br>
+          <div class="protocol-join">
+              <P style="font-size:14px; margin-bottom: -1px;">
+                환영합니다. 서비스 이용을 위해 아래 절차에 따라 회원가입을 부탁 드립니다.
+              </P>
+              <small style="color: red; font-size: 13px">* 필수 입력 항목</small>
+          </div>
+          <br>
+          <!-- action="/campaignMember/campaign_join" -->
+          <form id="campaign_joinform" name="campaign_joinform"
+              action="/member/join?_csrf=${_csrf.token }" method="POST">
+              <div class="info-body mb-3">
+                <div class="mb-2" style="padding-left:1rem !important;padding-right:2rem !important;">
+                    <div style="position: relative" class="float-left w-100 mb-2">
+                      <input type="text" style="padding-right: 25%" class="form-control input-underline" id="join_id" name="join_id" placeholder="E-mail(ID) (이용중인 이메일 계정을 입력해주세요)">
+                      <!-- <div style="position: absolute; top: 0%; left: 77%; width: 23%; height: 100%" class="float-left">
+                          <a class="form-control w-100 float-left text-center certify-btn" onClick="certify()">이메일 인증</a>
+                      </div> -->
+                    </div>
+                    
+                    <div class="float-left w-100 mb-2">
+                      <input type="password" class="form-control input-underline" id="join_pw" name="join_pw" placeholder="비밀번호 (6자리이상 소문자/숫자/특수기호를 사용해주세요)">
+                    </div>
+                    
+                    <!-- <div class="float-left w-100 mb-2">
+                      <input type="password" class="form-control input-underline" id="join_pwchk" name="join_pwchk" placeholder="비밀번호 재입력">
+                    </div> -->
 
+                    <div class="float-left w-60 mb-2 pr-1"> 
+                      <input type="text" class="form-control input-underline" id="cNm" name="cNm" placeholder="회사명">
+                    </div>
+                    
+                    <div class="float-left w-40 mb-2 pl-1"> 
+                      <!-- <select id="cCtgrNo" name="cCtgrNo" class="form-control input-underline text-center">
+                      <option value=0>category</option>
+                      <option value=1>광고 대행사</option>
+                      <option value=2>미디어 랩</option>
+                      <option value=3>광고주</option>
+                      <option value=4>개인</option>
+                    </select> -->
+                    <select id="cCtgrNo" name="cCtgrNo" class="form-select text-center" style="border-radius: 0; -webkit-appearance: none;">
+                      <option value=0>category</option>
+                      <option value=1>광고 대행사</option>
+                      <option value=2>미디어 랩</option>
+                      <option value=3>광고주</option>
+                      <option value=4>개인</option>
+                    </select>
+
+                    </div> 
+                    
+                    <div class="float-left w-100 mb-2">
+                      <input type="text" class="form-control input-underline" id="uNm" name="uNm" placeholder="이름">
+                    </div>
+                    
+                    
+                    <div class="float-left w-100 mb-2"> 
+                      <input type="text" class="form-control input-underline" id="uHp" name="uHp" placeholder="휴대전화 (-를 제외하고 입력해 주세요)" required>
+                    </div>
+                    
+                    <div class="float-left w-100 mt-3 mb-2 ml-3"> 
+                      <input type="checkbox" id="idGenAgr" name="idGenAgr"> 
+                      <label class="form-check-label" for="Remember-check"></label> 
+                      <a href="#" onClick="openRule(); return false;" id="passwordch" style="font-size:15px; color: #007bff;">서비스 명 이용 약관에 동의합니다.</a>
+                    </div>
+                </div>
+              </div>
+          </form>
+          <div class="float-left w-100 mt-4">
+              <button class="btn1 btm-primary-login btn-lg btn-no-radius w-50 font-11" id="submitJOIN-GO" style="margin-bottom: 100px; margin-left: 25%;">확인</button>
+              <!-- e-mail에서 회원 아이디 받아오기 -->
+          </div>
+        </div>
+    </div>
+  </div>
+  <!-- 비밀전호 찾기 -->
+  <div class="sub-window shadow" id="bg-PASSWORD-SEARCH" >
+    <div class="fixed-window12 ">
+        <a type="button" class="closebtn" id="closebtn1" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </a>
+    </div>
+    <div class="create-window-part px-4" style="padding-left:5rem !important;padding-right:5rem !important;">
+        <div class="form-group">
+          <div style="margin-bottom: 1rem;">
+              <b class="password-font mr-2" style="font-size:35px;">비밀번호 찾기</b><br>
+          </div>
+          <div class="protocol-contents">
+              <P>
+              가입하신 이메일로 비밀번호 변경 메일을 발송합니다.<br>
+              이메일을 받지 못한 경우 스팸함 혹은 수신 차단 여부를<br>
+              확인해주세요. 
+              </P>
+          </div>
+          <form id="campaign_pwchkform" name="campaign_pwchkform">
+              <div class="info-body mb-3">
+                <div class="mb-2 ">
+                    <input type="text" class="form-control input-underline mb-2"
+                      id="pwchk_id" name="pwchk_id" placeholder="ID(e-mail)">
+                    <span id="pwchk_idConfirmMsg"></span> <input type="text"
+                      class="form-control input-underline mb-2" id="pwchk_name"
+                      name="pwchk_name" placeholder="이름">
+                </div>
+              </div>
+          </form>
+          <div class="row m-0 py-2">
+                  <button class="btn1 btm-primary-login btn-lg btn-no-radius w-50 font-11" 
+                id="pwchkSubmit"> 보내기 </button>
+          </div>
+        </div>
+    </div>
+  </div>
+  <!-- 비밀전호 변경 -->
+  <div class="sub-window shadow" id="bg-PASSWORD-CHANGE">
+    <div class="fixed-window12 ">
+        <a type="button" class="closebtn" id="closebtn1" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </a>
+    </div>
+    <div class="create-window-part px-4" style="padding-left:5rem !important;padding-right:5rem !important;">
+        <div class="form-group">
+          <div>
+              <b class="password-font mr-2">비밀번호 변경</b>
+          </div><br><br>
+
+          <div class="protocol-contents">
+
+                <!-- LOGIN에서 비밀번호 변경 클릭시  회원 아이디 받아오기 -->
+              <P class="PwdSameCk" style="font-size: 20px; color:#4153FF; font-weight: bold">
+                ${userEmail} 
+              </P>
+              <P>   
+                계정의 새 비밀번호를 입력하세요.
+              </P>
+          </div>
+          <form id="member_pwChangeForm" name="member_pwChangeForm" action="/member/pwChange">
+          <div class="info-body mb-3">
+              <div class="mb-2 ">
+                <input type="hidden" id="pwChange_id" name="uId" value="${userEmail}">
+                <input type="password" class="form-control input-underline mb-2"
+                    id="pwChange_pw" name="uPw" placeholder="새 비밀번호(8자 이상 소문자/숫자/특수기호 포함)">
+                    <span id="pwChange_pwConfirmMsg"></span> 
+                <input type="password" class="form-control input-underline mb-2"
+                    id="pwchkChange_pw" name="pwchkChange_pw" placeholder="비밀번호 재입력">
+                    <span id="pwchkConfirmMsg"></span>
+              </div>
+          </div>
+              <a type="button"
+                class="btn btm-primary-login btn-lg btn-no-radius w-50 font-11" style="color:white;"
+                id="pwChange" disabled="disabled">보내기</a>
+          </div>
+        </form>
+        </div>
+    </div>
 
   <!-- contents1 -->
-  <div class="container-fluid h-800 pt-105" style="background-color: #007bff;">
+  <div class="container-fluid h-800 pt-105" style="background-color: #007bff;" id="solution">
     <div class="container">
       <div class="intro-left w-50 h-250">
         <div class="intro-title pt-80">
@@ -152,8 +334,12 @@
           실제 현업에서 근무하는 개발자들과 수강생들을<br>
           효과적으로 매칭하여 학습을 제공합니다.
         </p>
-        <button type="button" class="btn btn-outline-light mt-3 float-left" style="cursor: pointer;">시작하기</button>
+        <button type="button" class="btn btn-outline-light mt-3 float-left" style="cursor: pointer;"><a id="start">시작하기</a></button>
       </div>
+      <div class="intro-scroll mt-60">
+        <a class="rotate-270 content">scroll</a> <span
+           class="arrow"></span>
+     </div>
     </div>
   </div>
 
@@ -162,14 +348,15 @@
 
   <!-- contents3 -->
   <div id="before-tech"></div>
-  <div class="scrollmagic-pin-spacer" style="inset: auto; margin: 0px; display: block; position: relative; box-sizing: content-box; width: 100%; min-height: 1000px; height: auto; padding-top: 3555px; padding-bottom: 0px;">
-    <!-- <div id="tech" class="carousel slide" data-ride="carousel" style="position: relative; margin: auto; inset: 0px auto auto 0px; box-sizing: border-box; width: 100%;">
-    <ol class="carousel-indicators " id="index-slidebar">
-       <li data-target="#tech" data-slide-to="0" class="index-slide" style="pointer-events: none;"></li>
-       <li data-target="#tech" data-slide-to="1" class="index-slide2" style="pointer-events: none;"></li>
-         <li data-target="#tech" data-slide-to="2" class="index-slide3 active" style="pointer-events: none;"></li>
-     </ol> -->
-   <div id="slideContainer" style="transform: matrix(1, 0, 0, 1, 0, 0);">	
+  <!-- <div class="scrollmagic-pin-spacer" style="inset: auto; margin: 0px; display: block; position: relative; box-sizing: content-box; width: 100%; min-height: 1000px; height: auto; padding-top: 3555px; padding-bottom: 0px;"> -->
+    <div id="tech" class="carousel slide" data-ride="carousel">
+      <!-- 밑에 점 3개 -->
+      <ol class="carousel-indicators " id="index-slidebar">
+        <li data-target="#tech" data-slide-to="0" class="index-slide" style="pointer-events: none;"></li>
+        <li data-target="#tech" data-slide-to="1" class="index-slide2" style="pointer-events: none;"></li>
+        <li data-target="#tech" data-slide-to="2" class="index-slide3" style="pointer-events: none;"></li>
+      </ol>
+   <div id="slideContainer">	
      <section class="panel blue item active bck-1" id="slide1">
        <div class="container-fluid bg-tech ph-tech" id="tech1">
          <div class="container">
@@ -239,8 +426,31 @@
      </section>
    </div>
  </div>
-  </div>
+  <!-- </div> -->
 
+    <!-- contents-4 -->
+    <div class="container-fluid bg-tech" id="protocol">
+      <div class="row">
+         <div class="col bg-image h-700"></div>
+         <div class="col bg-protocol h-700 pt-5">
+            <div class="h-100">
+               <div class="w-100 h-25">
+                  <span class="protocol-index">PROTOCOL #1</span>
+                  </div>
+               <div class="w-100">
+                  <span class="ots mr-2">OTS</span><span class="ots-full">Opportunity
+                     To See</span><br> <br>
+                  <p class="protocol-contents">
+                     지금껏 옥외 미디어의 커뮤니케이션 효과는 명확한 측정 기준이 없었습니다.<br> 우리는 이를 측정하고
+                     규정하는 첫 번째 프로토콜로 OTS를 제시합니다.<br> <br> OTS는 노출량의 척도로 미디어
+                     별 타겟 소비자들의 최대 노출량을 의미합니다.<br> DATARGET은 보다 효과적이고 효율적인 옥외
+                     커뮤니케이션을 위한 프로토콜을 <br>연구/개발할 예정입니다.<br>
+                  </p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
 
   <!-- content5 -->
   <div class="container-fluid bg-intro h-700" id="contact">
@@ -307,6 +517,23 @@
       </div>
     </div>
   </div> -->
+  <script>
+    document.addEventListener('scroll', function() {
+      var currentScrollValue = document.documentElement.scrollTop;
+        if(Math.floor(currentScrollValue)>2968){
+          $('li').removeClass('active');
+          $('.index-slide2').addClass('active');
+        }
+        if(Math.floor(currentScrollValue)>5058){
+          $('li').removeClass('active');
+          $('.index-slide3').addClass('active');
+        }
+        if(Math.floor(currentScrollValue)<2838){
+          $('li.index-slide2').removeClass('active');
+          $('.index-slide').addClass('active');
+        }
+    });   
+  </script>
   <!-- bootstrap js cdn -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

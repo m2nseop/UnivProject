@@ -193,7 +193,7 @@ body {
 }
 
 .bgi-a {
-	background-image: url("/resources/images/contents-2.png");
+	background-image: url("/resources/images/contents-2.jpg");
 	background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -520,7 +520,7 @@ body {
 
 .intro-scroll .arrow{
 	width: 16px;
-    height: 142px;
+    height: 100px;
 	background-image: url(/resources/images/index/intro-scroll-arrow.png);
 	background-size: 16px 142px;
 	background-position: left bottom;
@@ -528,7 +528,7 @@ body {
 	float: left;
 }
 
-.carousel-custom {
+.custom {
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -600,7 +600,7 @@ body {
 }
 
 .index-slide.active{
-	background-color: #4153FF !important;
+	background-color: #007bff !important;
 }
 
 .index-slide2{
@@ -653,14 +653,14 @@ body {
 }
 
 .ots {
-	color: #4153FF;
+	color: #007bff;
 	font-size: 90px;
 	font-weight: 900;
 	font-family: "silkabold";
 }
 
 .ots-full {
-	color: #4153FF;
+	color: #007bff;
 	font-size: 25px;
 	font-weight: 900;
 	font-family: "silkabold";
@@ -668,12 +668,12 @@ body {
 
 
 .LOGIN-font {
-	color: #4153FF;
+	color: #007bff;
 	font-size: 46pt;
 	font-family: "silkabold";
 }
 .password-font {
-	color: #4153FF;
+	color: #007bff;
 	font-size: 30pt;
 	font-weight: 700;
 	font-family: "noto sans kr";
@@ -832,7 +832,7 @@ label.error{
 @keyframes color {
   100%,
   0% {
-    stroke: #4153FF;
+    stroke: #007bff;
 	}
 }
 .loading-bg {
@@ -908,7 +908,7 @@ label.error{
 }
 
 .bg-primary{
-	background-color: #4153FF !important;
+	background-color: #007bff !important;
 }
 
 .bg-secondary{
@@ -951,7 +951,7 @@ label.error{
 
 .create-window-part-join{
 	position: relative;
-    top: 23%;
+    top: 17%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
