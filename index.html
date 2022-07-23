@@ -10,23 +10,23 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   
-  <link rel="stylesheet" href="/resources/lib/bootstrap/css/bootstrap.css">
-  <link rel="stylesheet" href="/resources/fonts/css/all.css">
-  <link rel="stylesheet" href="/resources/index/css/design.css">
-  <link rel="stylesheet" href="/resources/lib/bootstrap/css/carousel.css">
+  <link rel="stylesheet" href="./resources/lib/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="./resources/fonts/css/all.css">
+  <link rel="stylesheet" href="./resources/index/css/design.css">
+  <link rel="stylesheet" href="./resources/lib/bootstrap/css/carousel.css">
 
-  <script src="/resources/lib/crypto/core.min.js"></script>
-  <script src="/resources/lib/crypto/sha256.min.js"></script>
-  <script src="/resources/lib/jquery/jquery.min.js"></script>
-  <script src="/resources/lib/jquery/jquery.mousewheel.min.js"></script>
-  <script src="/resources/lib/jquery/jquery.validate.min.js"></script>
-  <script src="/resources/lib/bootstrap/js/popper.js"></script>
-  <script src="/resources/lib/bootstrap/js/bootstrap.js"></script>
-  <script src="/resources/lib/greensock/TweenMax.min.js"></script>
-  <script src="/resources/lib/scrollmagic/scrollmagic.min.js"></script>
-  <script src="/resources/lib/scrollmagic/plugins/animation.gsap.min.js"></script>
-  <script src="/resources/lib/bootstrap/js/carousel.js"></script>
-  <script src="/resources/index/js/common.js"></script>
+  <script src="./resources/lib/crypto/core.min.js"></script>
+  <script src="./resources/lib/crypto/sha256.min.js"></script>
+  <script src="./resources/lib/jquery/jquery.min.js"></script>
+  <script src="./resources/lib/jquery/jquery.mousewheel.min.js"></script>
+  <script src="./resources/lib/jquery/jquery.validate.min.js"></script>
+  <script src="./resources/lib/bootstrap/js/popper.js"></script>
+  <script src="./resources/lib/bootstrap/js/bootstrap.js"></script>
+  <script src="./resources/lib/greensock/TweenMax.min.js"></script>
+  <script src="./resources/lib/scrollmagic/scrollmagic.min.js"></script>
+  <script src="./resources/lib/scrollmagic/plugins/animation.gsap.min.js"></script>
+  <script src="./resources/lib/bootstrap/js/carousel.js"></script>
+  <script src="./resources/index/js/common.js"></script>
 </head>
 
 <body>
@@ -35,7 +35,7 @@
   <!-- 상단 네비바를 감싸는 박스 -->
   <div class="container-fluid fixed-top top-contents" style="background-color: #007bff;">
     <nav class="navbar navbar-dark navbar-expand flexflow-row">
-      <a class="ml-5 mt-3 mb-3" href="/" style="text-decoration: none; font-size: 37px; color: white">서비스 이름</a>
+      <a class="ml-5 mt-3 mb-3" href="/" style="text-decoration: none; font-size: 37px; color: white">PROKER</a>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto mr-auto underline silkabold description">
           <li class="nav-item mr-5" style="color: white; cursor: pointer;">
@@ -70,7 +70,7 @@
     </nav>
   </div>
   
-  <!-- login, logout js -->
+  <!-- login, join js -->
   <style>
     #bg-JOIN form input{
        padding-left:0px !important;
@@ -315,7 +315,7 @@
     <div class="container">
       <div class="intro-left w-50 h-250">
         <div class="intro-title pt-80">
-          서비스 이름
+          PROKER
             <div class="w-50" style="background-color:white; height: 5px;"></div>
         </div>
       </div>
@@ -350,14 +350,14 @@
   <div id="before-tech"></div>
   <!-- <div class="scrollmagic-pin-spacer" style="inset: auto; margin: 0px; display: block; position: relative; box-sizing: content-box; width: 100%; min-height: 1000px; height: auto; padding-top: 3555px; padding-bottom: 0px;"> -->
     <div id="tech" class="carousel slide" data-ride="carousel">
-      <!-- 밑에 점 3개 -->
-      <ol class="carousel-indicators " id="index-slidebar">
-        <li data-target="#tech" data-slide-to="0" class="index-slide" style="pointer-events: none;"></li>
+      <!-- carousel => 밑에 점 3개 -->
+      <ol class="carousel-indicators" id="index-slidebar">
+        <li data-target="#tech" data-slide-to="0" class="index-slide active" style="pointer-events: none;"></li>
         <li data-target="#tech" data-slide-to="1" class="index-slide2" style="pointer-events: none;"></li>
         <li data-target="#tech" data-slide-to="2" class="index-slide3" style="pointer-events: none;"></li>
       </ol>
-   <div id="slideContainer">	
-     <section class="panel blue item active bck-1" id="slide1">
+    <div id="slideContainer">
+      <section class="panel blue item bck-1" id="slide1">
        <div class="container-fluid bg-tech ph-tech" id="tech1">
          <div class="container">
            <div class="row">
@@ -427,30 +427,6 @@
    </div>
  </div>
   <!-- </div> -->
-
-    <!-- contents-4 -->
-    <div class="container-fluid bg-tech" id="protocol">
-      <div class="row">
-         <div class="col bg-image h-700"></div>
-         <div class="col bg-protocol h-700 pt-5">
-            <div class="h-100">
-               <div class="w-100 h-25">
-                  <span class="protocol-index">PROTOCOL #1</span>
-                  </div>
-               <div class="w-100">
-                  <span class="ots mr-2">OTS</span><span class="ots-full">Opportunity
-                     To See</span><br> <br>
-                  <p class="protocol-contents">
-                     지금껏 옥외 미디어의 커뮤니케이션 효과는 명확한 측정 기준이 없었습니다.<br> 우리는 이를 측정하고
-                     규정하는 첫 번째 프로토콜로 OTS를 제시합니다.<br> <br> OTS는 노출량의 척도로 미디어
-                     별 타겟 소비자들의 최대 노출량을 의미합니다.<br> DATARGET은 보다 효과적이고 효율적인 옥외
-                     커뮤니케이션을 위한 프로토콜을 <br>연구/개발할 예정입니다.<br>
-                  </p>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
 
   <!-- content5 -->
   <div class="container-fluid bg-intro h-700" id="contact">
