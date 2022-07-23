@@ -12,7 +12,7 @@ function initTech(){
 		.to("#slideContainer", 1,   {x: "-33.3333%"})	// move in to first panel
 		// animate to third panel
 		.to("#slideContainer", 1,   {x: "-66.6666%"})
-	
+
 	// create scene to pin and link animation
 	new ScrollMagic.Scene({
 			triggerElement: "#before-tech",

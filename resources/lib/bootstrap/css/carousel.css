@@ -183,7 +183,7 @@
 .carousel-indicators .active {
   width: 30px;
   height: 12px;
-  background-color: #4153ff;
+  background-color:  #007bff;
 }
 .carousel-caption {
   position: absolute;
@@ -202,7 +202,7 @@
 }
 
 .index-slide .active{
-	background-color:#4153ff !important;
+	background-color: #007bff !important;
 }
 .index-slide2 .active{
 	background-color:white !important;

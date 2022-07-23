@@ -6,7 +6,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>서비스 명</title>
-  <!-- 성욱이꺼에서 긁어온 css 파일들 -->
+  <!-- css 파일들 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   
@@ -27,9 +27,10 @@
   <script src="./resources/lib/scrollmagic/plugins/animation.gsap.min.js"></script>
   <script src="./resources/lib/bootstrap/js/carousel.js"></script>
   <script src="./resources/index/js/common.js"></script>
+
 </head>
 
-<body>
+<body onload="init()">
   <!-- 가장 큰 레이아웃 -->
   <div class="container-fluid fixed-top min-vh-100 bgi-a" id="bg-image"></div>
   <!-- 상단 네비바를 감싸는 박스 -->
@@ -45,7 +46,7 @@
           </li>
           <li class="nav-item mr-5" style="color: white; cursor: pointer;">
             <a class="nav-link" href="#tech1">
-              PROTOCOL
+              TECH
             </a>
           </li>
           <li class="nav-item mr-5" style="color: white; cursor: pointer;">
@@ -171,11 +172,7 @@
                 <div class="mb-2" style="padding-left:1rem !important;padding-right:2rem !important;">
                     <div style="position: relative" class="float-left w-100 mb-2">
                       <input type="text" style="padding-right: 25%" class="form-control input-underline" id="join_id" name="join_id" placeholder="E-mail(ID) (이용중인 이메일 계정을 입력해주세요)">
-                      <!-- <div style="position: absolute; top: 0%; left: 77%; width: 23%; height: 100%" class="float-left">
-                          <a class="form-control w-100 float-left text-center certify-btn" onClick="certify()">이메일 인증</a>
-                      </div> -->
                     </div>
-                    
                     <div class="float-left w-100 mb-2">
                       <input type="password" class="form-control input-underline" id="join_pw" name="join_pw" placeholder="비밀번호 (6자리이상 소문자/숫자/특수기호를 사용해주세요)">
                     </div>
@@ -189,13 +186,6 @@
                     </div>
                     
                     <div class="float-left w-40 mb-2 pl-1"> 
-                      <!-- <select id="cCtgrNo" name="cCtgrNo" class="form-control input-underline text-center">
-                      <option value=0>category</option>
-                      <option value=1>광고 대행사</option>
-                      <option value=2>미디어 랩</option>
-                      <option value=3>광고주</option>
-                      <option value=4>개인</option>
-                    </select> -->
                     <select id="cCtgrNo" name="cCtgrNo" class="form-select text-center" style="border-radius: 0; -webkit-appearance: none;">
                       <option value=0>category</option>
                       <option value=1>광고 대행사</option>
@@ -348,7 +338,6 @@
 
   <!-- contents3 -->
   <div id="before-tech"></div>
-  <!-- <div class="scrollmagic-pin-spacer" style="inset: auto; margin: 0px; display: block; position: relative; box-sizing: content-box; width: 100%; min-height: 1000px; height: auto; padding-top: 3555px; padding-bottom: 0px;"> -->
     <div id="tech" class="carousel slide" data-ride="carousel">
       <!-- carousel => 밑에 점 3개 -->
       <ol class="carousel-indicators" id="index-slidebar">
@@ -356,79 +345,79 @@
         <li data-target="#tech" data-slide-to="1" class="index-slide2" style="pointer-events: none;"></li>
         <li data-target="#tech" data-slide-to="2" class="index-slide3" style="pointer-events: none;"></li>
       </ol>
+    
     <div id="slideContainer">
-      <section class="panel blue item bck-1" id="slide1">
-       <div class="container-fluid bg-tech ph-tech" id="tech1">
-         <div class="container">
-           <div class="row">
-             <div class="col h-600">
-               <div class="h-300 mt-120">
-                 <span class="carousel-num text-shadow-black silkabold fc-second">01</span>
-                 <p class="carousel-title">프로그래밍 언어 전문 과외</p>
-                 <p class="carousel-contents">
-                  OOOO은 국내 타사 과외 플랫폼과는 다르게<br> 
-                  비주류 언어 뿐만 아니라 최신 스택이나 배워볼<br>
-                  기회가 없었던 여러 경험을 제공합니다. <br>
-                 </p>
-               </div>
-             </div>
-             <div class="col tech-area">
-               <img  alt="" src="/resources/images/index/tech1.png" class="mt-120" style="width: 450px;">
-             </div>
-           </div>
-         </div>
-       </div>
-     </section>
-     <section class="panel turqoise item" id="slide2">
-       <div class="container-fluid bg-tech ph-tech" id="tech2">
-       <div class="container">
-         <div class="row">
-           <div class="col h-600">
-             <div class="h-300 mt-150">
-                 <span class="carousel-num text-shadow-white silkabold fc-primary">02</span>
-               <p class="carousel-title white-color">쉽고 직관적인 매칭</p>
-               <p class="carousel-contents white-color">
-                 OOOO은 쉽고 직관적인 UI로 관심있거나 학습하고 싶은<br>
-                 기술의 캠페인을 제안합니다.<br>
-                 또한 보다 안전하게 선생님과의 소통 및 과외금액 정산을<br>
-                 진행할 수 있는 환경을 지원합니다.
-               </p>
-             </div>
-           </div>
-           <div class="col tech-area">
-             <img alt="" src="/resources/images/index/tech2.png" class="mt-150" style="width: 480px">
-           </div>
-         </div>
-       </div>
-     </div>
-     </section>
-     <section class="panel green item bck-1" id="slide3">
-       <div class="container-fluid bg-tech ph-tech" id="tech3">
-       <div class="container">
-         <div class="row">
-           <div class="col h-600">
-             <div class="h-300 mt-150">
-             <span class="carousel-num text-shadow-black silkabold fc-second">03</span>
-               <p class="carousel-title">현업 개발자와의 학습</p>
-               <p class="carousel-contents">
-                OOOO은 실제 검증 및 인증된 현업 개발자를 통하여 직접적으로<br>
-                과외를 받으며 학습을 극대화 할 수 있으며 선생님들은 퇴근 후<br> 
-                경험을 토대로 학습을 제공하며 부수입과 학습제공 경험을 획득합니다.<br>
-               </p>
-             </div>
-           </div>
-           <div class="col tech-area">
-             <img alt="" src="/resources/images/index/tech3.png" class="mt-140" style="width: 470px;">	
-           </div>
-         </div>
-       </div>
-     </div>
-     </section>
-   </div>
+        <section class="panel blue item bck-1 active" id="slide1">
+          <div class="container-fluid bg-tech ph-tech" id="tech1">
+            <div class="container">
+              <div class="row">
+                <div class="col h-600">
+                  <div class="h-300 mt-120">
+                    <span class="carousel-num text-shadow-black silkabold fc-second">01</span>
+                    <p class="carousel-title">프로그래밍 언어 전문 과외</p>
+                    <p class="carousel-contents">
+                      OOOO은 국내 타사 과외 플랫폼과는 다르게<br> 
+                      비주류 언어 뿐만 아니라 최신 스택이나 배워볼<br>
+                      기회가 없었던 여러 경험을 제공합니다. <br>
+                    </p>
+                  </div>
+                </div>
+                <div class="col tech-area">
+                  <img  alt="" src="/resources/images/index/tech1.png" class="mt-120" style="width: 450px;">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="panel turqoise item" id="slide2">
+          <div class="container-fluid bg-tech ph-tech" id="tech2">
+          <div class="container">
+            <div class="row">
+              <div class="col h-600">
+                <div class="h-300 mt-150">
+                    <span class="carousel-num text-shadow-white silkabold fc-primary">02</span>
+                  <p class="carousel-title white-color">쉽고 직관적인 매칭</p>
+                  <p class="carousel-contents white-color">
+                    OOOO은 쉽고 직관적인 UI로 관심있거나 학습하고 싶은<br>
+                    기술의 캠페인을 제안합니다.<br>
+                    또한 보다 안전하게 선생님과의 소통 및 과외금액 정산을<br>
+                    진행할 수 있는 환경을 지원합니다.
+                  </p>
+                </div>
+              </div>
+              <div class="col tech-area">
+                <img alt="" src="/resources/images/index/tech2.png" class="mt-150" style="width: 480px">
+              </div>
+            </div>
+          </div>
+        </div>
+        </section>
+        <section class="panel green item bck-1" id="slide3">
+          <div class="container-fluid bg-tech ph-tech" id="tech3">
+          <div class="container">
+            <div class="row">
+              <div class="col h-600">
+                <div class="h-300 mt-150">
+                <span class="carousel-num text-shadow-black silkabold fc-second">03</span>
+                  <p class="carousel-title">현업 개발자와의 학습</p>
+                  <p class="carousel-contents">
+                    OOOO은 실제 검증 및 인증된 현업 개발자를 통하여 직접적으로<br>
+                    과외를 받으며 학습을 극대화 할 수 있으며 선생님들은 퇴근 후<br> 
+                    경험을 토대로 학습을 제공하며 부수입과 학습제공 경험을 획득합니다.<br>
+                  </p>
+                </div>
+              </div>
+              <div class="col tech-area">
+                <img alt="" src="/resources/images/index/tech3.png" class="mt-140" style="width: 470px;">	
+              </div>
+            </div>
+          </div>
+        </div>
+        </section>
+    </div>
  </div>
-  <!-- </div> -->
 
-  <!-- content5 -->
+  <!-- content4 -->
   <div class="container-fluid bg-intro h-700" id="contact">
 		<div class="container h-100">
 			<div class="row h-100">
@@ -439,13 +428,15 @@
             강원도 원주시 연세대길 1, OO관 OOO호
 					</p>
 					<!-- <div class="contact-icon m-auto" data-toggle="modal" data-target="#inquireModal"></div> -->
-          <button type="button" class="btn btn-outline-light mt-3" style="cursor: pointer;">문의하기</button>
-				</div>
+          <button type="button" class="btn btn-outline-light mt-3" style="cursor: pointer;" data-toggle="modal" data-target="#inquireModal">문의하기</button>
+          <div>
+        </div>  
+        </div>
 			</div>
 		</div>
 	</div>
-  <!-- modal -->
-  <!-- <div class="modal fade show" id="inquireModal" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" aria-labelledby="inquireModalLabel" aria-modal="true" style="display: block;">
+  <!-- 문의하기 modal -->
+  <div class="modal fade" id="inquireModal" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" aria-labelledby="inquireModalLabel" aria-modal="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content no-border-radius">
         <div class="modal-header no-border-bottom">
@@ -492,7 +483,7 @@
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
   <script>
     document.addEventListener('scroll', function() {
       var currentScrollValue = document.documentElement.scrollTop;
@@ -511,9 +502,9 @@
     });   
   </script>
   <!-- bootstrap js cdn -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script> -->
 </body>
 
 </html>
