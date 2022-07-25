@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="./resources/fonts/css/all.css">
   <link rel="stylesheet" href="./resources/index/css/design.css">
   <link rel="stylesheet" href="./resources/lib/bootstrap/css/carousel.css">
+  <link rel="stylesheet" href="./resources/lib/openlayers/css/ol.css">
 
   <script src="./resources/lib/crypto/core.min.js"></script>
   <script src="./resources/lib/crypto/sha256.min.js"></script>
@@ -27,6 +28,7 @@
   <script src="./resources/lib/scrollmagic/plugins/animation.gsap.min.js"></script>
   <script src="./resources/lib/bootstrap/js/carousel.js"></script>
   <script src="./resources/index/js/common.js"></script>
+  <script src="./resources/lib/openlayers/js/ol.js"></script>
 
 </head>
 
@@ -430,6 +432,7 @@
 					<!-- <div class="contact-icon m-auto" data-toggle="modal" data-target="#inquireModal"></div> -->
           <button type="button" class="btn btn-outline-light mt-3" style="cursor: pointer;" data-toggle="modal" data-target="#inquireModal">문의하기</button>
         </div>
+        <div id="mapp" class="mapp"></div>
 			</div>
 		</div>
 	</div>
@@ -482,6 +485,7 @@
       </div>
     </div>
   </div>
+  <script src="./resources/index/js/map.js"></script>
   <script>
     document.addEventListener('scroll', function() {
       var currentScrollValue = document.documentElement.scrollTop;

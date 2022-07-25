@@ -955,3 +955,10 @@ label.error{
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.mapp{   
+	margin-top: 122px;
+	margin-right: 33px;
+	width: 540px;
+	height: 420px;
+}
