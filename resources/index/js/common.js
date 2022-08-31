@@ -79,7 +79,7 @@ function init(){
 		subWindow.addClass("show");
 	});
 	
-	$(".closebtn").on("click", function(){  // login colse 버튼
+	$(".closebtn").on("click", function(){  // 사이드 팝업창 close 버튼
 		$(".sub-window").removeClass("show");
 		$(".sub-window form input").val('');
 		$(".sub-window form select").val(0);
@@ -112,11 +112,11 @@ function init(){
 	
 	/*로그인 유효성검사*/
 	$("#campaign_loginform").validate({
-		rules: {
+		rules: { // 규칙
 			id: {required: true, email: true},
 			password : {required: true}
 				},
-	    messages: {
+	    messages: { // 규칙을 위반했을 때 나타날 메시지
 	    	id: {
 	            required: "가입하신 이메일 주소를 입력해주세요."
 	          , email: "유효하지 않은 이메일입니다"
@@ -151,7 +151,8 @@ function init(){
 				data : dataSet,
 				success:function(data){
 					if(data.cnt == 0){
-						alert("존재하지 않는 사용자입니다.\n아이디와 비밀번호를 다시 확인해주세요.");
+						// alert("존재하지 않는 사용자입니다.\n아이디와 비밀번호를 다시 확인해주세요.");
+						alert("ID와 PW가 일치하지 않습니다.");
 						localStorage.removeItem("rememberPw");
 						$("input").blur();
 						location.reload();
@@ -189,7 +190,7 @@ function init(){
 	    messages: {
 	    	join_id: {
 	            required: "가입하실 이메일 주소를 입력해주세요.",
-	            email: "유효하지 않은 이메일입니다"
+	            email: "정상적인 이메일 주소를 입력해주세요."
 	        },
 	        join_pw: {
 	            required: "비밀번호를 입력해주세요."
@@ -219,7 +220,7 @@ function init(){
 			}
 	    	
 	    	if($("input:checkbox[name=idGenAgr]").is(":checked") == false) {
-				alert('DATARGET은 모든 이용약관에\n동의하신 후 이용 가능합니다.');
+				alert('PROKER는 모든 이용약관에\n동의하신 후 이용 가능합니다.');
 				return false;
 			}
 	    	deleteCertification(uId);

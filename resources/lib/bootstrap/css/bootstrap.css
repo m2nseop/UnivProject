@@ -694,9 +694,9 @@ pre code {
 }
 
 .col-2 {
-  -ms-flex: 0 0 16.666667%;
-  flex: 0 0 16.666667%;
-  max-width: 16.666667%;
+  -ms-flex: 0 0 12.666667%;
+  flex: 0 0 12.666667%;
+  max-width: 12.666667%;
 }
 
 .col-3 {
@@ -742,9 +742,9 @@ pre code {
 }
 
 .col-10 {
-  -ms-flex: 0 0 83.333333%;
-  flex: 0 0 83.333333%;
-  max-width: 83.333333%;
+  -ms-flex: 0 0 87.333333%;
+  flex: 0 0 87.333333%;
+  max-width: 87.333333%;
 }
 
 .col-11 {
@@ -8182,6 +8182,10 @@ button.bg-dark:focus {
   width: 25% !important;
 }
 
+.w-35 {
+  width: 35% !important;
+}
+
 .w-40 {
   width: 40% !important;
 }
@@ -8192,6 +8196,10 @@ button.bg-dark:focus {
 
 .w-60 {
   width: 60% !important;
+}
+
+.w-65 {
+  width: 65% !important;
 }
 
 .w-75 {
