@@ -422,6 +422,7 @@ function smthcroll(id){
 	$("."+id).addClass("active");
 }
 
+// 이메일 인증
 function certify(){
 	var email = $("#join_id").val();
 	var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
@@ -446,11 +447,12 @@ function certify(){
 	}
 }
 
+// 서버와 통신하여 이메일 중복확인
 function emailConfirm(email){
 	var flag = false;
 	$.ajax({
 		url:'/member/check/id',
-		type : 'get',		
+		type : 'get',
 		dataType : "json",
 		async:false,
 		data : {uId : CryptoJS.SHA256(email).toString()},
