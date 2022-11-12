@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>드래그 드롭</title>
+
+    <style>
+        .image {
+            width: 100px;
+            height: 100px;
+            float: left;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .imgBox {
+            width: 113px;
+            height: 150px;
+            float: left;
+            border: 3px solid;
+            margin-right: 2px;
+            text-align: center;
+        }
+
+        .dragStart {
+            width: 480px;
+            height: 100px;
+            border: 2px solid;
+        }
+
+        .boxName{
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>한글 공부</h1>
+    <h2>10초 이내로 과일그림을 드래그하여 과일 이름에 맞게 옮겨보세요!</h2>
+    <h3> 제한시간 : <span id="time"></span></h3>
+    <h3><button onclick="checkResult()">정답 확인</button>
+        결과 : <span id="result"></span></h3>
+    <h3>
+        <button onclick="reset()">다시 하기</button>
+    </h3>
+    <div class="dragStart">
+        <div class="image" ondrop="drop(event)" ondragover="dropset(event)">
+            <img id="딸기" src="image/딸기.png" alt="사진1" width="75" draggable="true" ondragstart="drag(event)">
+        </div>
+        <div class="image" ondrop="drop(event)" ondragover="dropset(event)">
+            <img id="수박" src="image/수박.png" alt="사진1" width="75" draggable="true" ondragstart="drag(event)">
+        </div>
+        <div class="image" ondrop="drop(event)" ondragover="dropset(event)">
+            <img id="파인애플" src="image/파인애플.png" alt="사진1" width="75" draggable="true" ondragstart="drag(event)">
+        </div>
+        <div class="image" ondrop="drop(event)" ondragover="dropset(event)">
+            <img id="사과" src="image/사과.png" alt="사진1" width="75" draggable="true" ondragstart="drag(event)">
+        </div>
+    </div>
+    <br>
+    <div>
+        <div id="사과" class="imgBox" ondrop="drop(event)" ondragover="dropset(event)" draggable="false">
+            <h3 class="boxName">사과</h3>
+        </div>
+        <div id="수박" class="imgBox" ondrop="drop(event)" ondragover="dropset(event)" draggable="false">
+            <h3 class="boxName">수박</h3>
+        </div>
+        <div id="딸기" class="imgBox" ondrop="drop(event)" ondragover="dropset(event)" draggable="false">
+            <h3 class="boxName">딸기</h3>
+        </div>
+        <div id="파인애플" class="imgBox" ondrop="drop(event)" ondragover="dropset(event)" draggable="false">
+            <h3 class="boxName">파인애플</h3>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        const result = document.getElementById("result");
+        let count = 0;
+        var time = 10;
+
+        var x = setInterval(function () {
+
+
+            document.getElementById("time").innerHTML = time + " 초";
+            time--;
+            if(time<5 ){
+                document.getElementById("time").style.color = "red";
+            }
+            if (time < 0) {
+                    clearInterval(x);
+                    alert("시간 초과! 실패!");
+                    result.innerText = "실패";
+                    if(confirm("다시 도전하시겠습니까?")){
+                        reset();
+                    }else{
+                        alert("다시 도전하시려면 다시하기 버튼을 눌러주세요!");
+                    }
+            }
+        }, 1000);
+
+
+        function dropset(event) {
+            event.preventDefault();
+        }
+
+        function drag(event) {
+            event.dataTransfer.setData("Text", event.target.id);
+        }
+
+        function drop(event) {
+            event.preventDefault();
+            var data = event.dataTransfer.getData("Text");
+            var imageName = document.getElementById(data).id;
+            var boxName = event.target.id;
+
+            if (imageName != boxName) {
+                alert("다시 한번 생각해보세요!");
+            } else {
+                event.target.appendChild(document.getElementById(data));
+                count++;
+            }
+        }
+
+        function checkResult() {
+            if (count == 4) {
+                alert("성공!");
+                alert("다시 도전하시려면 다시하기 버튼을 눌러주세요!");
+                result.innerText = "성공";
+                clearInterval(x);
+            } else {
+                alert("그림을 알맞은 위치로 드래그하여 옮겨주세요!");
+            }
+        }
+
+        function reset(){
+            location.reload();
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트 편집기</title>
+
+    <style>
+        div.item {
+            float: left;
+            margin: 0 3px;
+            padding: 10px;
+            border: 2px solid black;
+        }
+
+        input {
+            width: 100px;
+            height: 30px;
+        }
+
+        #editor {
+            width: 550px;
+            height: 200px;
+            border: 1px solid;
+            margin-right: 10px;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: lightgray
+        }
+    </style>
+
+    <script type="text/javascript">
+        
+        window.onload = function () {
+            var editor = document.getElementById("editor");
+            if (editor.isContentEditable) {
+                editor.focus();
+            }
+        };
+
+        function Underline() {
+            document.execCommand("Underline");
+        }
+
+        function justifyleft() {
+            document.execCommand("justifyleft");
+        }
+
+        function justifycenter() {
+            document.execCommand("justifycenter");
+        }
+
+        function justifyright() {
+            document.execCommand("justifyright");
+        }
+
+        function setBold() {
+            document.execCommand("bold");
+        }
+
+        function setItalic() {
+            document.execCommand("italic");
+        }
+
+        function setSelectAll() {
+            document.execCommand("selectAll");
+        }
+
+        function setUndo() {
+            document.execCommand("undo");
+        }
+
+        function setsuperscript() {
+            document.execCommand("subscript");
+        }
+
+        function setUndo() {
+            document.execCommand("undo");
+        }
+
+        function dropset(event) {
+            event.preventDefault();
+        }
+
+        function drag(event) {
+            event.dataTransfer.setData("text", event.target.id);
+        }
+
+        function drop(event) {
+            var data = event.dataTransfer.getData("text");
+            event.target.appendChild(document.getElementById(data));
+            event.preventDefault();
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>텍스트 편집기</h1>
+
+    <div id="item" ondrop="drop(event)" ondragover="dropset(event)">
+        <input type="button" value="굵게" onclick="setBold()" id="btnBold" draggable="true" ondragstart="drag(event)">
+        <input type="button" value="기울게" onclick="setItalic()" id="btnItalic" draggable="true"
+            ondragstart="drag(event)">
+        <input type="button" value="윗첨자" onclick="setsuperscript()" id="btnscript" draggable="true"
+            ondragstart="drag(event)">
+        <input type="button" value="밑줄" onclick="Underline()" id="btnUnderline" draggable="true"
+            ondragstart="drag(event)">
+        <input type="button" value="왼쪽정렬" onclick="justifyleft()" id="btnJustifyLeft" draggable="true"
+            ondragstart="drag(event)">
+        <input type="button" value="가운데정렬" onclick="justifycenter()" id="btnJustifyCenter" draggable="true"
+            ondragstart="drag(event)">
+        <input type="button" value="오른쪽정렬" onclick="justifyright()" id="btnJustifyRight" draggable="true"
+            ondragstart="drag(event)">
+        <input type="button" value="모두 선택" onclick="setSelectAll()" id="btnSelect" draggable="true"
+            ondragstart="drag(event)">
+        <input type="button" value="되돌리기" onclick="setUndo()" id="btnUndo" draggable="true" ondragstart="drag(event)">
+    </div>
+    <div id="editor" contenteditable>
+
+    </div>
+</body>
+
+</html>

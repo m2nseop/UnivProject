@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또 추첨기</title>
+
+    <style>
+        #inputNum {
+            width: 20px;
+        }
+
+        .ball {
+            display: inline-block;
+            border: 1px solid green;
+            color: green;
+            border-radius: 20px;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 20px;
+            text-align: center;
+            margin-right: 20px;
+        }
+        #bonus .ball {
+            display: inline-block;
+            border: 1px solid red;
+            color: red;
+            border-radius: 20px;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 20px;
+            text-align: center;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>로또 추첨기</h1>
+    <span> 이거 맞추면 로또 사러 갑시다 <br> 숫자 하나 입력 </span>
+    <input id="inputNum" type="text" maxlength="1"
+        oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" />
+    <button onclick="Start()">로또 추첨 시작</button>
+    <br><br>
+    <div id="result">추첨 결과: </div>
+    <div id="bonus">보너스 번호: </div>
+    <h3><span id="resultText"></span></h3>
+    <div id="again" style="display: none;">이대로 잠 못자! 한번 더 !! <button onclick="location.reload()">다시하기</button></div>
+    <script src="random.js"></script>
+</body>
+
+</html>
